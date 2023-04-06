@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="precon nect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;1,100;1,200;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <section class="header">
+    <nav>
+      <a href="/index.html"><img src="./images/logo.png" alt="" /></a>
+
+      <div class="nav-links">
+        <span id="close" onclick="closeMenu()" class="cross">✖️</span>
+        <ul>
+          <li><a href="/index.html">HOME</a></li>
+          <li><a href="/about">ABOUT</a></li>
+          <li><a href="/books">BOOKS</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+        </ul>
+      </div>
+      <span id="laod" onclick="openMenu()" class="cross">⬅️</span>
+    </nav>
+    <div class="text-box">
+      <h1>World's Biggest University</h1>
+      <p>
+        Making website is now one fo the easiest thing in the world. You just
+        need to learn HTML, CSS, Javascript. <br />Then, you are good to go
+      </p>
+      <a href="/index.html" class="hero-btn">Click Me To Win</a>
+    </div>
+  </section>
+
+  <section class="course">
+    <h1>Courses Avaliable</h1>
+    <p>These are the courses Avaliable at our university</p>
+
+    <div class="row">
+      <div class="course-col">
+        <h3>Intermediate</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
+          sint, officiis voluptatibus soluta labore eaque officia quo rem
+        </p>
+      </div>
+      <div class="course-col">
+        <h3>Degree</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
+          sint, officiis voluptatibus soluta labore eaque officia quo rem
+        </p>
+      </div>
+      <div class="course-col">
+        <h3>Post Graduate</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
+          sint, officiis voluptatibus soluta labore eaque officia quo rem
+        </p>
+      </div>
+    </div>
+  </section>
+  <body>
+    <script>
+      function openMenu() {
+        document.querySelector(".nav-links").style.right = 0;
+      }
+
+      function closeMenu() {
+        document.querySelector(".nav-links").style.right = -2000;
+        document.querySelector(".nav-links").style.transition = "1s";
+      }
+    </script>
+  </body>
+</html>

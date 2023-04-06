@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: limegreen;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.links {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.links ul {
+  padding: 50px 0;
+  list-style: none;
+}
+
+.links li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.links li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .header {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: limegreen;
+    height: 1rem;
+    width: 100%;
+  }
+}

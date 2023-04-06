@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  background-color: purple;
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --background: rgba(0, 214, 170, 0.85);
+}
+
+header {
+  background: var(--background);
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+}
+
+nav {
+  position: absolute;
+  background: var(--background);
+  width: 100%;
+  text-align: left;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 450ms ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+nav a:hover {
+  color: black;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 450ms ease-in-out 250ms;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-left: 1.5em;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  height: 2px;
+  width: 1.5em;
+  background: white;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .logo {
+    grid-column: 2 / span 1;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: black;
+    position: absolute;
+    top: -0.5em;
+    transform: scale(0, 1);
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+    transition: transform 450ms ease-in-out;
+  }
+}
